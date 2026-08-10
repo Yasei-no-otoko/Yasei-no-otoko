@@ -38,8 +38,7 @@ AMD Radeon / ROCm 向けの GPU 最適化まで。
 
 | 時期 | 領域 | 公開コード |
 | --- | --- | --- |
-| 2012–2014 | HTML5 / JavaScript、ゲーム、入力インタラクション | [RGBWars](https://github.com/Yasei-no-otoko/RGBWars)、[Momo](https://github.com/Yasei-no-otoko/Momo)、[blastbuster-vr](https://github.com/Yasei-no-otoko/blastbuster-vr) |
-| 2016–2017 | Unity / C#、制作支援 | [HNestedPrefab](https://github.com/Yasei-no-otoko/HNestedPrefab) |
+| 2012–2014 | HTML5 / JavaScript、ゲーム、入力インタラクション | [RGBWars](https://github.com/Yasei-no-otoko/RGBWars)、[blastbuster-vr](https://github.com/Yasei-no-otoko/blastbuster-vr) |
 | 2026 | AI を組み込んだ Web / 3D プロダクト | [ModelDuel](https://github.com/Yasei-no-otoko/ModelDuel) |
 | 2026 | AMD Radeon / ROCm、ComfyUI、GPU 最適化 | [ComfyUI AMD Video Upscaler](https://github.com/Yasei-no-otoko/ComfyUI-AMD-Video-Upscaler)、[ComfyUI RDNA35 Attention](https://github.com/Yasei-no-otoko/ComfyUI-RDNA35-Attention) |
 | 2026 | ローカル AI と根拠ベースのエージェント | [KoushiKo Vault](https://github.com/Yasei-no-otoko/koushiko-vault) |
