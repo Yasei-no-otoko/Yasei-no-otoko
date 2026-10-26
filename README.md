@@ -9,7 +9,9 @@ Oculus Rift DK1 through Apple Vision Pro. My public work connects
 application-level bottlenecks to runtime behavior, numerical correctness,
 and measurable end-to-end results.
 
-**Recent results:** three merged PRs in [ROCmFPX][rocmfpx]; **20–50% faster
+**Recent results:** merged upstream contributions to [Microsoft ONNX Runtime
+GenAI][ort-genai] and [AMD AITER][aiter], alongside three merged PRs in
+[ROCmFPX][rocmfpx]; **20–50% faster
 end-to-end processing** across my measured Qwen Image 2.1 and MiniMax H3
 workflows using ROCmFPX; and MiniMax H3 **audio-VAE processing reduced from
 approximately 5.0 s to 0.3 s** for a 5-second video workload.
@@ -35,6 +37,15 @@ performance gains. The E2E range is reported as a speed improvement, not as
 a 20–50% reduction in elapsed time.
 
 Related public update: [ROCmFPX / generative-AI performance work][performance-update].
+
+## Merged Contributions to ONNX Runtime GenAI and AITER
+
+Both PRs below were submitted from this account and merged upstream.
+
+| Project / PR | Contribution | Validation and release evidence |
+| --- | --- | --- |
+| [Microsoft ONNX Runtime GenAI #2596][ort-pr2596] · merged September 28, 2026 | Reduce temporary tensor memory during quantized weight packing for model export by accumulating masked values directly into packed output, avoiding per-bit int64 expansion while preserving bit layout, padding, transposes, and input tensors. | **157 CPU tests passed**. In a small 4-bit regression fixture, the largest individual tensor-operation result fell from **164,480 to 2,570 bytes**; this measures an intermediate tensor, not process peak memory. |
+| [AMD AITER #6589][aiter-pr6589] · merged October 16, 2026 | Improve Windows JIT/build reliability: fix blob-generator argument parsing, honor explicit build-worker limits, normalize RDNA compute-unit counts, and guard optional imports with shared runtime GPU detection. | The **gfx1201 Windows smoke test** and **Ruff/Black checks** passed on the final PR head. Included in [AITER v0.1.26][aiter-v0126], whose release notes list this account as a new contributor. |
 
 ## Merged Contributions to ROCmFPX
 
@@ -90,6 +101,8 @@ repositories.
 | 2026 | AMD Radeon / ROCm, ComfyUI, and GPU optimization | [ComfyUI AMD Video Upscaler][amd-upscaler], [ComfyUI RDNA35 Attention][rdna35] |
 | 2026 | Local AI and evidence-grounded agents | [KoushiKo Vault](https://github.com/Yasei-no-otoko/koushiko-vault) |
 | September 2026 | Merged inference-runtime correctness and model-compatibility contributions | ROCmFPX [#114][pr114], [#115][pr115], [#116][pr116] |
+| September 2026 | Merged model-export memory improvement | Microsoft ONNX Runtime GenAI [#2596][ort-pr2596] |
+| October 2026 | Merged Windows JIT/build and GPU-detection fixes | AMD AITER [#6589][aiter-pr6589], included in [v0.1.26][aiter-v0126] |
 
 Wherever possible, each project's README documents its design decisions,
 runtime requirements, testing procedures, and benchmark assumptions.
@@ -98,7 +111,7 @@ runtime requirements, testing procedures, and benchmark assumptions.
 
 - Languages: `C++` · `Rust` · `Python` · `TypeScript` · `JavaScript` · `C#`
 - Product / Web: `Unity` · `Unreal Engine` · `React` · `Next.js` · `Three.js` · `FastAPI`
-- GPU / Media: `ROCmFPX` · `ROCm / HIP` · `PyTorch` · `Triton` · `ComfyUI` · `FFmpeg / AMF`
+- GPU / Media: `ROCmFPX` · `AITER` · `ONNX Runtime GenAI` · `ROCm / HIP` · `PyTorch` · `Triton` · `ComfyUI` · `FFmpeg / AMF`
 - Engineering: end-to-end profiling · numerical correctness · regression tests · AI-assisted development
 
 [rocmfpx]: https://github.com/charlie12345/ROCmFPX
@@ -109,3 +122,8 @@ runtime requirements, testing procedures, and benchmark assumptions.
 [performance-update]: https://x.com/yasei_no_otoko/status/2102392974118445084
 [rdna35]: https://github.com/Yasei-no-otoko/ComfyUI-RDNA35-Attention
 [amd-upscaler]: https://github.com/Yasei-no-otoko/ComfyUI-AMD-Video-Upscaler
+[ort-genai]: https://github.com/microsoft/onnxruntime-genai
+[ort-pr2596]: https://github.com/microsoft/onnxruntime-genai/pull/2596
+[aiter]: https://github.com/ROCm/aiter
+[aiter-pr6589]: https://github.com/ROCm/aiter/pull/6589
+[aiter-v0126]: https://github.com/ROCm/aiter/releases/tag/v0.1.26
